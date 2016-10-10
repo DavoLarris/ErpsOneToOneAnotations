@@ -14,6 +14,10 @@
 		<property name="model" column="MODEL" />
 		<property name="registration" column="REGISTRATION" />
 		<one-to-one name="insurance" cascade="all"/>
+		
+		<!-- TO MAKE BIDIRECTIONAL 
+			<one-to-one name="insurance" cascade="persist,delete" /> 
+		-->
 	</class>
 
 </hibernate-mapping> 
