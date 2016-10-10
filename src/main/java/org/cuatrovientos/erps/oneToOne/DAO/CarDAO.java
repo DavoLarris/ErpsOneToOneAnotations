@@ -7,7 +7,6 @@ import org.cuatrovientos.erps.oneToOne.DAOInteface.CarDAOInterface;
 import org.cuatrovientos.erps.oneToOne.models.Car;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
 public class CarDAO implements CarDAOInterface{
 
 	public Car selectById(Long id) {
@@ -22,12 +21,11 @@ public class CarDAO implements CarDAOInterface{
 
 	public List<Car> selectAll() {
 		SessionFactory sessionFactory = HibernateSession.getSessionFactory();
-	    Session session = sessionFactory.openSession();
-	 
-	    List<Car> cars = session.createQuery("from cars").list();
-	    
-	    session.close();
-	    return cars;
+		Session session = sessionFactory.openSession();
+		List<Car> cars = session.createCriteria(Car.class).list();
+		
+		session.close();
+		return cars;
 	}
 
 	public void insert(Car car) {

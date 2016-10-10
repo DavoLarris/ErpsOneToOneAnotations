@@ -13,8 +13,7 @@
 		</id>
 		<property name="model" column="MODEL" />
 		<property name="registration" column="REGISTRATION" />
-		<property name="insurance" column="INSURANCE" />
 		<one-to-one name="insurance" cascade="all"/>
 	</class>
 
-</hibernate-mapping>
+</hibernate-mapping> 

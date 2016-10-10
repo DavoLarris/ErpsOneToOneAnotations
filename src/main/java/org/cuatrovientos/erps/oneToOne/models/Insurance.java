@@ -45,5 +45,9 @@ public class Insurance {
 		this.type = type;
 	}
 	
+	@Override
+	public String toString() {
+		return "ID=" + this.id + ", company " + this.company + ", cost=" + this.cost + ",  type=" + this.type;
+	}
 	
 }
