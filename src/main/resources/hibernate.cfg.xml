@@ -26,8 +26,10 @@
 
 		<!-- Here comes the mapping definition - saved in resources dir with this 
 			hibernate config -->
-		<mapping resource="Car.hbm.xml" />
-		<mapping resource="Insurance.hbm.xml" />
+		
+			<mapping class="org.cuatrovientos.erps.oneToOne.models.Car" />
+			<mapping class="org.cuatrovientos.erps.oneToOne.models.Insurance" />
+		 
 
 	</session-factory>
 

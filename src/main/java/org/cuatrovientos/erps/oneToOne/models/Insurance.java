@@ -1,10 +1,20 @@
 package org.cuatrovientos.erps.oneToOne.models;
 
+import javax.persistence.*;
+
+@Entity
 public class Insurance {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String company;
 	private Double cost;
-	private Long id;
 	private String type;
+	
+	//Comentario para hacer BIDIRECCIONAL
+	
+	//@OneToOne(mappedBy = "car")
+	//private Car car;
 	
 	public Insurance() {}
 	
@@ -14,11 +24,12 @@ public class Insurance {
 	 * @param id
 	 * @param type
 	 */
-	public Insurance(String company, Double cost, Long id, String type) {
+	public Insurance(String company, Double cost, Long id, String type) { //Car car
 		this.company = company;
 		this.cost = cost;
 		this.id = id;
 		this.type = type;
+		//this.car = car;
 	}
 	public String getCompany() {
 		return company;
@@ -44,6 +55,14 @@ public class Insurance {
 	public void setType(String type) {
 		this.type = type;
 	}
+	
+	/**public Car getCar() {
+		return car;
+	}
+	public void setCar(Car car) {
+		this.car = car;
+	}
+	**/
 	
 	@Override
 	public String toString() {

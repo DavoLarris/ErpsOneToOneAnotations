@@ -1,10 +1,17 @@
 package org.cuatrovientos.erps.oneToOne.models;
 
+import javax.persistence.*;
+
+@Entity
 public class Car {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Insurance insurance;
 	private String model;
 	private String registration;
+	
+	@OneToOne(cascade = { CascadeType.ALL } )
+	private Insurance insurance;
 	
 	public Car() {}
 	
